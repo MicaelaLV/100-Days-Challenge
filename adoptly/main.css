@@ -1,0 +1,110 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+@media (max-width: 500px) {
+  ul li {
+    width: 100%;
+  }
+}
+
+/* Navigation Bar */
+.header {
+ background-color: rgb(48, 98, 126);
+  height:80px;
+}
+
+.header li {
+  display:inline-block;
+  text-transform:capitalize;
+  text-align:center;
+  color:white;
+  font-size:20px;
+  padding:20px 30px;
+  position:relative;
+  left:90px;
+}
+
+.header .main {
+  font-size:28px;
+  background-color:rgb(229, 35, 100);
+}
+
+/* Jumbotron */
+.jumbotron {
+  background: url('https://s3.amazonaws.com/codecademy-content/projects/adoptly/bg.jpg')no-repeat center center;
+  background-size:cover;
+  height:550px;
+}
+
+.jumbotron h1 {
+  color:rgb(229, 35, 100);
+  font-size:65px;
+  text-align:center;
+  font-weight:700;
+}
+
+/* Supporting */
+div .col-lg-4 {
+  text-align: center;
+  padding:0px 15px;
+	margin-top:20px;
+}
+
+.col-lg-4 p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight:100;
+}
+
+
+	/* Supporting Btns */
+a, .btn {
+  text-transform: uppercase;
+  color: rgb(48, 98, 126);
+  border: 1px solid rgb(48, 98, 126);
+  padding: 10px 80px;
+  margin-top:40px;
+  margin-bottom:80px;
+  border-radius:0;
+}
+
+/* Footer */
+.site-footer {
+  background-color:#e52364;
+  height:80px;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+.site-footer p {
+  color:white;
+  text-align:center;
+  position:relative;
+  top:30px;
+  left: 40px;
+}
+
+ .nav.nav-pills.pull-right {
+   position:relative;
+   bottom:20px;
+ }
+
+/* Styling Nav */
+
+.nav.nav-pills.pull-right a:link{
+  border:none;
+  color:white;
+}
+
+#contact {
+  text-transform:capitalize;
+}
