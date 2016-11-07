@@ -1,0 +1,94 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Merriweather, serif;
+}
+
+/* Body */
+
+body {
+background: url('https://s3.amazonaws.com/codecademy-content/projects/junction/bg.jpg')no-repeat center center;
+background-size:cover;
+  height:940px;
+}
+
+.container {
+  max-width:940px;
+  }
+
+
+/* Header and Navigation */
+.header {
+  height:70px;
+  padding: 10px 0;
+  background: rgba(0,0,5,0.4);
+    }
+
+.nav li {
+  color: white;
+  display: inline;
+	left: 100px;
+  bottom: 65px;
+  margin: 15px;
+
+}
+
+.logo {
+  margin: 20px;
+ 	position:relative;
+  bottom:15px;
+  left:10px;
+}
+
+
+/* Jumbotron */
+.jumbotron {
+  position: relative;
+  top: 50px;
+  text-shadow: 0 2px 3px rgba(0,0,0,.4);
+  background:none;
+  border:none;
+}
+
+.jumbotron h1 {
+  color:white;
+  font-size:65px;
+  position:absolute;
+  left:250px;
+  top:0px;
+
+}
+
+/* Supporting */
+.supporting {
+  margin-top: 40px;
+  text-shadow: 0 2px 3px rgba(0,0,0,.4);
+}
+
+div .col-md-4 {
+  color:white;
+  margin:80px 0px;
+  padding:0px 30px;
+  text-align:center;
+	height:200px;
+  width:300px;
+  float:left;
+  left:50px;
+  top: 20px;
+ }
+
+/* Join Button */
+
+.btn {
+  padding: 10px 70px;
+  border-radius: 10px;
+  color:white;
+  background-color:rgba(0,255,188,0.5);
+ 	border: none;
+  position: relative;
+  left: 400px;
+  bottom: -90px;
+  font-size:18px;
+
+
+}
