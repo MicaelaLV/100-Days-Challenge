@@ -1,0 +1,119 @@
+/**FONTS**/
+ @font-face {
+   font-family: malina;
+   src: url(malina.ttf);
+ }
+
+@font-face {
+  font-family: caviarDreams;
+  src: url(caviardreams.ttf);
+}
+
+/**NAVIGATION**/
+
+.container {
+  height: 70px;
+}
+
+li.social {
+  display: inline;
+  margin: 26.6px;
+  position: relative;
+  top: 20px;
+  right: 260px;
+}
+
+nav div {
+  float: right;
+  position: relative;
+  bottom: 95px;
+  left: 160px;
+}
+
+li.navbar {
+  position: relative;
+  top: 60px;
+  text-transform: uppercase;
+  }
+
+a {
+  font-family: caviarDreams;
+  letter-spacing: 3px;
+  font-size: 20px;
+}
+
+a:link {
+  text-decoration: none;
+  color: #000;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+a:active {
+  text-decoration: none;
+  color: #000;
+}
+
+/**LANDING IMAGE section**/
+
+div.landing-image {
+  background-size: cover;
+  background-image: url('https://static.pexels.com/photos/38106/pexels-photo-38106.jpeg');
+  opacity: 0.5;
+  height: 900px;
+  width: auto;
+  border: none;
+}
+
+#main-logo {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+/**BENVENUTI**/
+div.welcome {
+  width: 1200px;
+  float: left;
+  margin: 70px 50px;
+  overflow: visible;
+  }
+
+div.welcome h1 {
+  font-family: malina;
+  font-size: 80px;
+  letter-spacing: 4px;
+  text-align: center;
+  margin-bottom: 40px;
+  }
+
+div.welcome p {
+  font-family: caviarDreams;
+	font-size: 20px;
+	letter-spacing: 0.2px;
+	text-align: center;
+  font-weight: lighter;
+  }
+
+div.triangles {
+  width: 570px;
+  margin-left: 70px;
+}
+
+/**MENU**/
+
+ul li {
+  list-style-type: none;
+  display: inline-block;
+  margin: 30px;
+
+}
