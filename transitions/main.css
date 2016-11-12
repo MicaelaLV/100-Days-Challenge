@@ -1,0 +1,540 @@
+/**UPLOAD ICON & FONT SET**/
+
+@font-face {
+	font-family: 'Luna', cursive;
+	src: url('luna.ttf');
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+       url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+       url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+/**HIDDEN OVERFLOW TO PERMIT TO ANIMATE THE PANEL WRAPPER**/
+body {
+	overflow: hidden;
+}
+
+/**MAIN CONTAINER STYLE**/
+.st-container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	font-family: 'Lato', sans-serif;
+	text-transform: uppercase;
+	font-weight: 100;
+	}
+
+	.st-container p {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		font-family: 'Lato', sans-serif;
+		text-transform: lowercase;
+		}
+
+/**FIXED POSITION FOR THE NAVIGATION**/
+/**RADIO BUTTON OVERLAYED BY THE LINKS AND HIDE THEM WITH A 0 OPACITY**/
+.st-container > input,
+.st-container > a {
+	position: fixed;
+	bottom: 0px;
+	width: 20%;
+	cursor: pointer;
+	font-size: 16px;
+	height: 34px;
+	line-height: 34px;
+}
+
+/** CORRECTION OF THE ERRORS WE MIGHT HAVE BY USING PERCETAGES**/
+.st-container > input {
+	opacity: 0;
+	z-index: 1000;
+}
+
+.st-container > a {
+	z-index: 10;
+	font-weight: 700;
+	background: #2E3449;
+	color: #fff;
+	text-align: center;
+	text-shadow: 1px 1px 1px rgba(151,24,64,0.2);
+}
+
+/* "Fix" for percentage rounding: add a background bar pseudo element with the same color like the labels */
+.st-container:before {
+	content: '';
+	position: fixed;
+	width: 100%;
+	height: 34px;
+	background: #161920;
+	z-index: 9;
+	bottom: 0;
+}
+
+/**POSTIONED THE LINKS AND INPUTS**/
+#st-control-1, #st-control-1 + a {
+	left: 0;
+}
+
+#st-control-2, #st-control-2 + a {
+	left: 20%;
+}
+
+#st-control-3, #st-control-3 + a {
+	left: 40%;
+}
+
+#st-control-4, #st-control-4 + a {
+	left: 60%;
+}
+
+#st-control-5, #st-control-5 + a {
+	left: 80%;
+}
+
+/**GIVING THE SIBLING LINK OF THE ONE LINKED A DIFFERENT BACKGROUND COLOR**/
+.st-container > input:checked + a,
+.st-container > input:checked:hover + a{
+	background: #143D34;
+}
+
+/**ADDED A TRIANGLE ON TOP OF THE CHECKED LINK OF THE BOTTOM NAV**/
+.st-container > input:checked + a:after,
+.st-container > input:checked:hover + a:after{
+	bottom: 100%;
+	border: solid transparent;
+	content: '';
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-bottom-color: #143D34;
+	border-width: 20px;
+	left: 50%;
+	margin-left: -20px;
+}
+
+/**DEFINED AN HOVER STATE FOR THE LINK ELEMENT**/
+.st-container > input:hover + a{
+	background: #143D34;
+}
+
+.st-container > input:hover + a:after {
+	border-bottom-color: #143D34;
+}
+
+/**DEFINING THE WRAPPER OF THE PANELS MEASUREMENTS AND THE ANIMATION**/
+.st-scroll,
+.st-panel {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.st-scroll {
+	top: 0;
+	left: 0;
+	transition: all 0.6s ease-in-out;
+	-moz-transition: all 0.6s ease-in-out;
+	-o-transition: all 0.6s ease-in-out;
+	-ms-transition: all 0.6s ease-in-out;
+	transition: all 0.6s ease-in-out;
+
+	/* Let's enforce some hardware acceleration */
+	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-backface-visibility: hidden;
+}
+
+.st-panel{
+	background: #fff;
+	overflow: hidden;
+}
+
+/**GIVEN AN UP AND DOWN ANIMATION TO THE st-scroll **/
+#st-control-1:checked ~ .st-scroll {
+	-webkit-transform: translateY(0%);
+	-moz-transform: translateY(0%);
+	-o-transform: translateY(0%);
+	-ms-transform: translateY(0%);
+	transform: translateY(0%);
+}
+#st-control-2:checked ~ .st-scroll {
+	-webkit-transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	-o-transform: translateY(-100%);
+	-ms-transform: translateY(-100%);
+	transform: translateY(-100%);
+}
+#st-control-3:checked ~ .st-scroll {
+	-webkit-transform: translateY(-200%);
+	-moz-transform: translateY(-200%);
+	-o-transform: translateY(-200%);
+	-ms-transform: translateY(-200%);
+	transform: translateY(-200%);
+}
+#st-control-4:checked ~ .st-scroll {
+	-webkit-transform: translateY(-300%);
+	-moz-transform: translateY(-300%);
+	-o-transform: translateY(-300%);
+	-ms-transform: translateY(-300%);
+	transform: translateY(-300%);
+}
+#st-control-5:checked ~ .st-scroll {
+	-webkit-transform: translateY(-400%);
+	-moz-transform: translateY(-400%);
+	-o-transform: translateY(-400%);
+	-ms-transform: translateY(-400%);
+	transform: translateY(-400%);
+}
+
+
+/**STYLING THE CONTENTS ELEMENTS**/
+/**CREATED A TRIANGLE ON THE TOP SECTION OF THE PAGE**/
+.st-deco{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	margin-left: -40px;
+	background: #143D34;
+	-webkit-transform: translateY(-50%) rotate(45deg);
+	-moz-transform: translateY(-50%) rotate(45deg);
+	-o-transform: translateY(-50%) rotate(45deg);
+	-ms-transform: translateY(-50%) rotate(45deg);
+	transform: translateY(-50%) rotate(45deg);
+}
+
+
+/**MOVING THE HEADER UP IN THE PAGE**/
+.st-panel h2 {
+	color: #143D34;
+	text-shadow: 1px 1px 1px rgba(151,24,64,0.2);
+	position: absolute;
+	font-size: 54px;
+	font-weight: 900;
+	width: 80%;
+	left: 10%;
+	text-align: center;
+	line-height: 50px;
+	margin: -70px 0 0 0;
+	padding: 0;
+	top: 50%;
+	-webkit-backface-visibility: hidden;
+}
+
+/**ANIMATING THE HEADING, MOVING DOWN THE PAGE, WHEN CLICKING ON AN INPUT**/
+#st-control-1:checked ~ .st-scroll #st-panel-1 h2,
+#st-control-2:checked ~ .st-scroll #st-panel-2 h2,
+#st-control-3:checked ~ .st-scroll #st-panel-3 h2,
+#st-control-4:checked ~ .st-scroll #st-panel-4 h2,
+#st-control-5:checked ~ .st-scroll #st-panel-5 h2{
+	-webkit-animation: moveDown 0.6s ease-in-out 0.2s backwards;
+	-moz-animation: moveDown 0.6s ease-in-out 0.2s backwards;
+	-o-animation: moveDown 0.6s ease-in-out 0.2s backwards;
+	-ms-animation: moveDown 0.6s ease-in-out 0.2s backwards;
+	animation: moveDown 0.6s ease-in-out 0.2s backwards;
+}
+@-webkit-keyframes moveDown{
+	0% {
+		-webkit-transform: translateY(-40px);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes moveDown{
+	0% {
+		-moz-transform: translateY(-40px);
+		opacity: 0;
+	}
+	100% {
+		-moz-transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@-o-keyframes moveDown{
+	0% {
+		-o-transform: translateY(-40px);
+		opacity: 0;
+	}
+	100% {
+		-o-transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@-ms-keyframes moveDown{
+	0% {
+		-ms-transform: translateY(-40px);
+		opacity: 0;
+	}
+	100% {
+		-ms-transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@keyframes moveDown{
+	0% {
+		transform: translateY(-40px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+
+/**STYLING THE PARAGRAPH**/
+.st-panel p {
+	position: absolute;
+	text-align: center;
+	font-size: 16px;
+	line-height: 22px;
+	color: #161920;
+	z-index: 2;
+	padding: 0;
+	width: 50%;
+	left: 25%;
+	top: 50%;
+	margin: 10px 0 0 0;
+	-webkit-backface-visibility: hidden;
+}
+
+/**ANIMATING THE PARAGRAPH TO MOVE UP**/
+#st-control-1:checked ~ .st-scroll #st-panel-1 p,
+#st-control-2:checked ~ .st-scroll #st-panel-2 p,
+#st-control-3:checked ~ .st-scroll #st-panel-3 p,
+#st-control-4:checked ~ .st-scroll #st-panel-4 p,
+#st-control-5:checked ~ .st-scroll #st-panel-5 p{
+	-webkit-animation: moveUp 0.6s ease-in-out 0.2s backwards;
+	-moz-animation: moveUp 0.6s ease-in-out 0.2s backwards;
+	-o-animation: moveUp 0.6s ease-in-out 0.2s backwards;
+	-ms-animation: moveUp 0.6s ease-in-out 0.2s backwards;
+	animation: moveUp 0.6s ease-in-out 0.2s backwards;
+}
+
+@-webkit-keyframes moveUp{
+	0% {
+		-webkit-transform: translateY(40px);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes moveUp{
+	0% {
+		-moz-transform: translateY(40px);
+		opacity: 0;
+	}
+	100% {
+		-moz-transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@-o-keyframes moveUp{
+	0% {
+		-o-transform: translateY(40px);
+		opacity: 0;
+	}
+	100% {
+		-o-transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@-ms-keyframes moveUp{
+	0% {
+		-ms-transform: translateY(40px);
+		opacity: 0;
+	}
+	100% {
+		-ms-transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@keyframes moveUp{
+	0% {
+		transform: translateY(40px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+
+/* Coloring the sections */
+
+/**micaela style**/
+#st-panel-1 {
+	background: url('https://static.pexels.com/photos/132982/pexels-photo-132982.jpeg')no-repeat center center;
+	background-size: cover;
+}
+#st-panel-1 p {
+	color: #fff;
+	font-size: 20px;
+	}
+#st-panel-1 h2 {
+	font-size: 80px;
+	color: #143D34;
+	font-family: 'Luna', cursive;
+	text-transform: capitalize;
+}
+
+/**personal file style**/
+#st-panel-2 {
+	background: url('https://static.pexels.com/photos/214573/pexels-photo-214573.jpeg') no-repeat center center;
+	background-size: cover;
+}
+#st-panel-2 p {
+	color: #fff;
+	font-size: 20px;
+	font-weight: 600;
+	text-transform: capitalize;
+		}
+#st-panel-2 h2 {
+	font-size: 80px;
+	color: #161920;
+	font-family: 'Lato', cursive;
+	text-transform: uppercase;
+}
+
+/**passions style**/
+#st-panel-4 {
+	background: url('https://static.pexels.com/photos/70222/pexels-photo-70222.jpeg') no-repeat center center;
+	background-size: cover;
+}
+#st-panel-4 p {
+	color: #fff;
+	font-size: 20px;
+	}
+#st-panel-4 h2 {
+	font-size: 80px;
+	color: #143D34;
+	font-family: 'Lato', cursive;
+	text-transform: capitalize;
+}
+
+/**contacts style**/
+#st-panel-5 {
+	background: url('https://static.pexels.com/photos/9165/hand-top-white-old.jpg') no-repeat center center;
+	background-size: cover;
+}
+#st-panel-5 p {
+	color: #2E3449;
+	font-size: 20px;
+	}
+#st-panel-5 h2 {
+	font-size: 80px;
+	color: #2E3449;
+	font-family: 'Lato', cursive;
+	text-transform: capitalize;
+}
+
+
+.st-color,
+.st-deco{
+	background: #143D34;
+}
+.st-color [.material-icons]:after {
+	color: #161920;
+}
+.st-color .st-deco {
+	background: #fff;
+}
+.st-color h2 {
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+.st-color p {
+	color: #fff;
+	color: rgba(255,255,255,0.8);
+}
+
+/**MEDIA QUERYS TO CONTROL THE STYLING**/
+@media screen and (max-width: 520px) {
+	.st-panel h2 {
+		font-size: 42px;
+	}
+
+	.st-panel p {
+		width: 90%;
+		left: 5%;
+		margin-top: 0;
+	}
+
+	.st-container > a {
+		font-size: 13px;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.st-container > a {
+		font-size: 10px;
+	}
+
+	.st-deco{
+		width: 120px;
+		height: 120px;
+		margin-left: -60px;
+	}
+
+	[.material-icons]:after {
+		font-size: 60px;
+		-webkit-transform: rotate(-45deg) translateY(15%);
+		-moz-transform: rotate(-45deg) translateY(15%);
+		-o-transform: rotate(-45deg) translateY(15%);
+		-ms-transform: rotate(-45deg) translateY(15%);
+		transform: rotate(-45deg) translateY(15%);
+	}
+}
